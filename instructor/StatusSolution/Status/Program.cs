@@ -16,12 +16,6 @@ app.Run(); // "Block"
 
 
 
-
-
-
-
-
-
 //var statusMessage = new StatusMessage(Guid.NewGuid(), "Looks Good", DateTimeOffset.Now);
 
 //Console.WriteLine($"The id {statusMessage.Id} status: {statusMessage.Message} at {statusMessage.When}");
