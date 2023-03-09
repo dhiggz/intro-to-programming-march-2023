@@ -1,5 +1,6 @@
 ﻿
 using Banking.Domain;
+using Banking.UnitTests.TestDoubles;
 
 namespace Banking.UnitTests;
 
@@ -11,7 +12,7 @@ public class NewAccounts
         // "Write the code you wish you had"
 
         //Given
-        BankAccount account = new BankAccount();
+        BankAccount account = new BankAccount(new DummyBonusCalculator());
 
         //Then
         decimal balance = account.GetBalance();
