@@ -34,7 +34,7 @@ app.UseCors();
 app.MapGet("/status", async (IDocumentSession db) =>
 {
     var response = await db.Query<StatusMessage>()
-    .OrderByDescending(sm => sm.When)
+    .OrderByDescending(tacos => tacos.When)
     .FirstOrDefaultAsync();
 
     if (response == null)
