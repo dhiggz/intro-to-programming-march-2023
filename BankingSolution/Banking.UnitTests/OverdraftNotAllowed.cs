@@ -37,6 +37,7 @@ public class OverdraftNotAllowed
 		{
 			account.Withdraw(account.GetBalance() + 0.01M);
 		});
+		Assert.True(rightExpetionThrow);
 	}
 
 	public class ExceptionHelpers
