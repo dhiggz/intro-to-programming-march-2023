@@ -1,5 +1,7 @@
 ﻿
 using Banking.Domain;
+using Banking.UnitTests.TestDoubles;
+using Moq;
 
 namespace Banking.UnitTests;
 
@@ -11,7 +13,7 @@ public class NewAccounts
         // "Write the Code You Wish You Had" (WTCYWYH)
         // Given
         // Type identifier = initializer;
-        var account = new BankAccount();
+        var account = new BankAccount(new Mock<ICalculateBonuses>().Object);
         // When
         decimal balance = account.GetBalance();
         // Then

@@ -61,6 +61,8 @@ Great Kubernetes resources. She really goes into depth when needed, and has lots
 
 #### Honorable Mentions
 
+[TypeScript Matt Pocock](https://www.totaltypescript.com/)
+
 [Gary Bernhardt](https://www.destroyallsoftware.com/screencasts): I have learned *so much* from Gary over the years. Absolutely brilliant stuff.  His most famous video [Wat](https://www.destroyallsoftware.com/talks/wat) is a bit dated but will give you a sense of what you are dealing with here. Laugh out loud funny. His talk on [Boundaries](https://www.destroyallsoftware.com/talks/boundaries) is one of the most clarifying talks on software architecture I've seen. (It is expanded on in [Functional Core Imperative Shell](https://www.destroyallsoftware.com/screencasts/catalog/functional-core-imperative-shell)). The concepts he presents here are *key* to modern software architecture, including Angular, and services. I find them particularly helpful if you are trying to get your head around Apache Kafka (they are frequently referenced in books and papers on Kafka).  
 
 [Execute Program](https://www.executeprogram.com/) is a online training site by Gary. You get 16 free lessons, or can pay for more and WOW are they good. Gary has *really* thought about how to deliver training for developers that is useful and "sticks". Great stuff for TypeScript, SQL, JavaScript, and his Regular Expressions course will give you super powers.
