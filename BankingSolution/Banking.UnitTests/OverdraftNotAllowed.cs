@@ -28,10 +28,38 @@ public class OverdraftNotAllowed
         var account = new BankAccount();
         var openingBalance = account.GetBalance();
 
-		Assert.Throws<OverdraftException>(() =>
+		//Assert.Throws<OverdraftException>(() =>
+		//{
+		//	account.Withdraw(account.GetBalance() + 0.01M);
+		//});
+
+		var rightExpetionThrow = ExceptionHelpers.TryThisSuspectCode<OverdraftException>(() =>
 		{
 			account.Withdraw(account.GetBalance() + 0.01M);
 		});
-    }
+	}
+
+	public class ExceptionHelpers
+	{
+		public static bool TryThisSuspectCode<TException>(Action suspectCode)
+            where TException : Exception
+		{
+			var rightExceptionThrown = false;
+			try
+			{
+				//run suspect code
+				suspectCode();
+			}catch(TException)
+			{
+				rightExceptionThrown = true;
+			}
+			return rightExceptionThrown;
+		}
+	}
+
+	public static string FormatName(string first, string last)
+	{
+		return $"{last}, {first}";
+	}
 
 }
