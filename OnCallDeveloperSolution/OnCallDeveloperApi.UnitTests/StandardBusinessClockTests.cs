@@ -9,7 +9,7 @@ public class StandardBusinessClockTests
     public void ReturnsTrueDuringBusinessHours()
     {
         var stubbedClock = new Mock<ISystemTime>();
-        stubbedClock.Setup(clock => clock.GetCurrent()).Returns(new DateTime(1969, 4, 20, 09, 00, 00));
+        stubbedClock.Setup(clock => clock.GetCurrent()).Returns(new DateTime(1969, 4, 23, 09, 00, 00));
         IProvideTheBusinessClock clock = new StandardBusinessClock(stubbedClock.Object);
 
         Assert.True(clock.IsDuringBusinessHours());
