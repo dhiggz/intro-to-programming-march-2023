@@ -1,27 +1,42 @@
 ﻿
-using System.Threading.Tasks.Sources;
-
 namespace StringCalculator;
 
 public class StringCalculator
 {
+    private readonly ILogger _logger;
+    private readonly IWebService _webService;
+
+    public StringCalculator(ILogger logger, IWebService webService)
+    {
+        _logger = logger;
+        _webService = webService;
+    }
 
     public int Add(string numbers)
     {
-        if (numbers == "") return 0;
-        var delimiter = ",";
-        if (numbers.StartsWith("//"))
+        int total = numbers == "" ? 0 : numbers.Split(',', '\n')// ["1", "2"]
+                .Select(int.Parse) // [1,2]
+                .Sum(); // 3
+
+        try
         {
-            delimiter = numbers[2].ToString();
-            numbers = numbers.Substring(4);
-        }
-        var sum = 0;
-        numbers = numbers.Replace("\n", delimiter);
-        var numberList = numbers.Split(delimiter);
-        foreach (var number in numberList)
+            _logger.Write(total.ToString());
+        } catch(LoggingException ex)
         {
-            sum += int.Parse(number);
+            //Write the code you wish you had
+            _webService.LoggingFailed(ex.Message);
         }
-        return sum;
+
+        return total;
     }
 }
+public interface ILogger 
+{ 
+    void Write(string message);
+}
+
+public interface IWebService
+{
+    void LoggingFailed(string failureMessage);
+}
+

@@ -1,76 +1,46 @@
 ﻿
-using System.Reflection;
-
 namespace StringCalculator;
 
 public class StringCalculatorTests
 {
+    private readonly StringCalculator _calculator;
+    public StringCalculatorTests()
+    {
+        //these have nothing to do with the logger, so we use a dummy test double
+        //these are often just created inline in the constructor
+        _calculator = new StringCalculator(new Mock<ILogger>().Object, new Mock<IWebService>().Object);
+    }
+
     [Fact]
     public void EmptyStringReturnsZero()
     {
-        var calculator = new StringCalculator();
 
-        var result = calculator.Add("");
+        var result = _calculator.Add("");
 
         Assert.Equal(0, result);
     }
 
     [Theory]
-    [InlineData("4", 4)]
-    [InlineData("5", 5)]
-    public void SingleDigits(string numbers, int expected)
+    [InlineData("1", 1)]
+    [InlineData("42", 42)]
+    [InlineData("142", 142)]
+
+    public void SingleDigit(string numbers, int expected)
     {
-        var calculator = new StringCalculator();
-
-        var result = calculator.Add(numbers);
-
-        Assert.Equal(expected, result);
+        var result = _calculator.Add(numbers); 
+        
+        Assert.Equal(expected, result);  
     }
 
     [Theory]
-    [InlineData("4,5", 9)]
-    [InlineData("12,340", 352)]
-    public void TwoNumbers(string numbers, int expected)
+    [InlineData("1,2", 3)]
+    [InlineData("1,2,3,4,5,6,7,8,9", 45)]
+    [InlineData("100\n1", 101)]
+    [InlineData("1\n2,3", 6)]
+
+    public void AllTheRest(string numbers, int expected)
     {
-        var calculator = new StringCalculator();
-
-        var result = calculator.Add(numbers);
-
-        Assert.Equal(expected, result);
-    }
-
-    [Theory]
-    [InlineData("4,5,45,60", 114)]
-    [InlineData("12,340,1", 353)]
-    public void MultipleNumbers(string numbers, int expected)
-    {
-        var calculator = new StringCalculator();
-
-        var result = calculator.Add(numbers);
-
-        Assert.Equal(expected, result);
-    }
-
-    [Theory]
-    [InlineData("4,5\n45,60,1\n2", 117)]
-    [InlineData("12\n340\n1", 353)]
-    public void NewLineSplitters(string numbers, int expected)
-    {
-        var calculator = new StringCalculator();
-
-        var result = calculator.Add(numbers);
-
-        Assert.Equal(expected, result);
-    }
-
-    [Theory]
-    [InlineData("//;\n1;2;3", 6)]
-    [InlineData("//-\n1-25-4", 30)]
-    public void DifferentDelimiters(string numbers, int expected)
-    {
-        var calculator = new StringCalculator();
-
-        var result = calculator.Add(numbers);
+        var result = _calculator.Add(numbers);
 
         Assert.Equal(expected, result);
     }
