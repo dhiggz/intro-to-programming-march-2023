@@ -2,6 +2,16 @@
 using OnCallDeveloperApi;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(pol =>
+    {
+        pol.AllowAnyOrigin();
+        pol.AllowAnyMethod();
+        pol.AllowAnyHeader();
+    });
+});
+
 
 // Add services to the container.
 
@@ -14,6 +24,7 @@ builder.Services.AddSingleton<IProvideTheBusinessClock, StandardBusinessClock>()
 
 var app = builder.Build();
 
+app.UseCors();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

@@ -8,7 +8,7 @@ public class OnCallDeveloperController : ControllerBase
 
     public OnCallDeveloperController(IProvideTheBusinessClock businessClock)
     {
-        _businessClock = businessClock;
+        this._businessClock = businessClock;
     }
 
 
@@ -16,6 +16,7 @@ public class OnCallDeveloperController : ControllerBase
     [HttpGet("/oncalldeveloper")]
     public ActionResult GetOnCallDeveloper()
     {
+        Thread.Sleep(1500); // don't do this!
         GetOnCallDeveloperResponse response; 
         // WTCYWYH
         if(_businessClock.IsDuringBusinessHours())
