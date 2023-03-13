@@ -1,0 +1,46 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "id": "S_G1Ac5IiUVQMwK4dszOB",
+      "type": "text",
+      "x": 411,
+      "y": 150,
+      "width": 1069,
+      "height": 875,
+      "angle": 0,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "roundness": null,
+      "seed": 1777358553,
+      "version": 1567,
+      "versionNonce": 1673556279,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1678722113738,
+      "link": null,
+      "locked": false,
+      "text": "Angular is a tool for creating Apps - not for creating websites.\nWebsites are server-side code, primarily - generating HTML to send to the browser.\n\n- Web Stuff is a combination of:\n    - Content (HTML, images, media, etc.)\n    - Affordances (this the \"Hyper\" part of HTML) through which the user can interact with the application\n        - Native web only supports 2 affordances\n            - Hyperlinks (A tag) - go to another web page.\n            - Forms - Send this data to another web page.\n-- \"Application Like\" \n    - \"What is an \"app\" vs. a web site?\n    - Better affordances - \n    - \"State\" - that we actually some of the data in the browser and code that works on that data\n            - is what tools like Angular (or React, or Svelte, or whatever) have to provide.\n\n\n\nAngular in particular - \n\n- Uses a metaphor of a \"hierarchy of components\" to describe what the user sees.\n\n- Component -\n    - A TypeScript class that has some code in it that works with state\n    - And a template written in a programming language that looks a LOT like HTML but isn't\n    that projects that onto the screen.\n    - \"An Angular thingy that is responsible for an area of the screen the user will see\"\n    - Components have two key responsibilites:\n        - Present the application state to the user\n        - Provide affordances through which the user can interact with that state\n\n\nIn an Angular application:\n    - components are in a hierarchy\n    - the Adam/Eve, the Momma/Poppa is the \"app component\"\n",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 868,
+      "containerId": null,
+      "originalText": "Angular is a tool for creating Apps - not for creating websites.\nWebsites are server-side code, primarily - generating HTML to send to the browser.\n\n- Web Stuff is a combination of:\n    - Content (HTML, images, media, etc.)\n    - Affordances (this the \"Hyper\" part of HTML) through which the user can interact with the application\n        - Native web only supports 2 affordances\n            - Hyperlinks (A tag) - go to another web page.\n            - Forms - Send this data to another web page.\n-- \"Application Like\" \n    - \"What is an \"app\" vs. a web site?\n    - Better affordances - \n    - \"State\" - that we actually some of the data in the browser and code that works on that data\n            - is what tools like Angular (or React, or Svelte, or whatever) have to provide.\n\n\n\nAngular in particular - \n\n- Uses a metaphor of a \"hierarchy of components\" to describe what the user sees.\n\n- Component -\n    - A TypeScript class that has some code in it that works with state\n    - And a template written in a programming language that looks a LOT like HTML but isn't\n    that projects that onto the screen.\n    - \"An Angular thingy that is responsible for an area of the screen the user will see\"\n    - Components have two key responsibilites:\n        - Present the application state to the user\n        - Provide affordances through which the user can interact with that state\n\n\nIn an Angular application:\n    - components are in a hierarchy\n    - the Adam/Eve, the Momma/Poppa is the \"app component\"\n"
+    }
+  ],
+  "appState": {
+    "gridSize": null,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}
