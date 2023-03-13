@@ -1,3 +1,3 @@
 export const environment = {
-    onCallApi: "https://REAL_URL"
+  onCallApi: 'http://REAL_URL/',
 };

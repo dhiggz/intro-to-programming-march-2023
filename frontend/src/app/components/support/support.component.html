@@ -4,13 +4,21 @@
 
   <div data-testid="contact-info" *ngIf="onCallDeveloper$ | async as contact">
     <div>
-      <p>Support Person Name <span data-testid="name">{{contact.name}}</span></p>
+      <p>
+        Support Person Name <span data-testid="name">{{ contact.name }}</span>
+      </p>
     </div>
     <div>
-      <p>Support Person Phone <span data-testid="phone">{{contact.phone}}</span></p>
+      <p>
+        Support Person Phone
+        <span data-testid="phone">{{ contact.phone }}</span>
+      </p>
     </div>
     <div>
-      <p>Support Person Email <span data-testid="email">{{contact.email}}</span></p>
+      <p>
+        Support Person Email
+        <span data-testid="email">{{ contact.email }}</span>
+      </p>
     </div>
   </div>
 </section>

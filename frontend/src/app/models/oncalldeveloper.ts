@@ -1,5 +1,6 @@
+
 export type OnCallDeveloperResponseModel = {
-        name: string;
-        phone: string;
-        email: string;
+    name: string;
+    phone: string;
+    email: string;
 }

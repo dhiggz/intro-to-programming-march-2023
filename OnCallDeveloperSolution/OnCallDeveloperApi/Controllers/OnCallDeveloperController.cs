@@ -11,6 +11,7 @@ public class OnCallDeveloperController : ControllerBase
     }
     //GET /oncalldeveloper -> 200 Ok
     [HttpGet("/oncalldeveloper")]
+    [ResponseCache(Location=ResponseCacheLocation.Any, Duration=30)]
     public ActionResult GetOnCallDeveloper()
     {
         Thread.Sleep(3000);

@@ -1,3 +1,3 @@
 export const environment = {
-    onCallApi: 'http://localhost:1338/',
+  onCallApi: 'http://localhost:1338/',
 };
