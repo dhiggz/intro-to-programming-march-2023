@@ -8,6 +8,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { SupportComponent } from './components/support/support.component';
 import { HttpClientModule } from '@angular/common/http'
+import { OnCallDataService } from './services/oncall-dataservice';
 
 @NgModule({
   declarations: [
