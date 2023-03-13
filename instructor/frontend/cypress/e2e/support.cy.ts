@@ -4,7 +4,7 @@ describe('The Support Page', () => {
       cy.intercept(
         {
           method: 'GET',
-          url: 'http://localhost:1338/oncalldeveloper',
+          url: 'http://real_url/oncalldeveloper',
         },
         {
           statusCode: 200,
