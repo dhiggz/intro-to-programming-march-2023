@@ -41,5 +41,9 @@
     "typescript.updateImportsOnFileMove.enabled": "always",
     "explorer.confirmDelete": false,
     "eslint.quiet": false,
-    "peacock.color": "#dd0531"
+    "peacock.color": "#dd0531",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
