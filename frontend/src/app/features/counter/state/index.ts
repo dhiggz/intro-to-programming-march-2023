@@ -30,3 +30,8 @@ export const selectCounterCurrent = createSelector(
   selectCounterBranch,
   (b) => b.current,
 );
+
+export const selectCounterResetDisabled = createSelector(
+  selectCounterCurrent,
+  (c) => c === 0,
+);

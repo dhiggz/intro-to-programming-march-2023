@@ -13,5 +13,10 @@
 </div>
 
 <div>
-  <button class="btn btn-primary">Reset</button>
+  <button
+    [disabled]="(current$ | async) === 0"
+    (click)="reset()"
+    class="btn btn-primary">
+    Reset
+  </button>
 </div>
