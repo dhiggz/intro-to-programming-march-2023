@@ -10,6 +10,9 @@ import { SupportComponent } from './components/support/support.component';
 import { HttpClientModule } from '@angular/common/http';
 import { OnCallDataService } from './services/oncall-data.service';
 import { CounterModule } from './features/counter/counter.module';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './state';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +21,14 @@ import { CounterModule } from './features/counter/counter.module';
     NavigationComponent,
     SupportComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, CounterModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    CounterModule,
+    StoreModule.forRoot(reducers),
+    StoreDevtoolsModule.instrument(), //this is for the HAWTNESS for development
+  ],
   providers: [OnCallDataService],
   bootstrap: [AppComponent],
 })
