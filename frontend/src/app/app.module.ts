@@ -27,7 +27,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     HttpClientModule,
     CounterModule,
     StoreModule.forRoot(reducers),
-    StoreDevtoolsModule.instrument(), //this is for the HAWTNESS for development
+    StoreDevtoolsModule.instrument(), // this is the HAWTNESS for development.
   ],
   providers: [OnCallDataService],
   bootstrap: [AppComponent],

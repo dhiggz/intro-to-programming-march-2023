@@ -5,18 +5,21 @@
   <button
     (click)="setCountBy(1)"
     type="button"
+    [disabled]="(by$ | async) === 1"
     class="btn btn-primary">
     1
   </button>
   <button
     (click)="setCountBy(3)"
     type="button"
+    [disabled]="(by$ | async) === 3"
     class="btn btn-primary">
     3
   </button>
   <button
     (click)="setCountBy(5)"
     type="button"
+    [disabled]="(by$ | async) === 5"
     class="btn btn-primary">
     5
   </button>

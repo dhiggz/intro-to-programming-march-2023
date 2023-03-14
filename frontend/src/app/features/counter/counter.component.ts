@@ -9,18 +9,19 @@ import { counterEvents } from './state/actions/counter.actions';
   styleUrls: ['./counter.component.css'],
 })
 export class CounterComponent {
+  // TODO: Make this an observable of some data in the store.
   current$ = this.store.select(selectCounterCurrent);
   resetDisabled$ = this.store.select(selectCounterResetDisabled);
 
   constructor(private readonly store: Store) {}
 
   increment() {
-    //this.current += 1;
+    // TODO: Dispatch an action to the store to say the count incremented
     this.store.dispatch(counterEvents.incrementButtonClicked());
   }
 
   decrement() {
-    //this.current -= 1;
+    // TODO: Dispatch an action to the store to say the count was decremented
     this.store.dispatch(counterEvents.decrementButtonClicked());
   }
 

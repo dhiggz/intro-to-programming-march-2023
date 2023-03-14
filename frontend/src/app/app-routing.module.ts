@@ -7,24 +7,24 @@ import { CounterComponent } from './features/counter/counter.component';
 const routes: Routes = [
   {
     path: 'dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
   },
   {
     path: 'support',
-    component: SupportComponent
+    component: SupportComponent,
   },
   {
     path: 'counter',
-    component: CounterComponent
+    component: CounterComponent,
   },
   {
     path: '**',
-    redirectTo: 'dashboard'
-  }
+    redirectTo: 'dashboard',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

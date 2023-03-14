@@ -9,6 +9,8 @@ export class OnCallDataService {
   constructor(private readonly client: HttpClient) {}
 
   getCurrentHelpInformation(): Observable<OnCallDeveloperResponseModel> {
-    return this.client.get<OnCallDeveloperResponseModel>(environment.onCallApi + 'oncalldeveloper');
+    return this.client.get<OnCallDeveloperResponseModel>(
+      environment.onCallApi + 'oncalldeveloper'
+    );
   }
 }

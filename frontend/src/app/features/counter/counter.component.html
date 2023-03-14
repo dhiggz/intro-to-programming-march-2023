@@ -11,12 +11,13 @@
     +
   </button>
 </div>
-
 <div>
   <button
-    [disabled]="(current$ | async) === 0"
+    [disabled]="resetDisabled$ | async"
     (click)="reset()"
     class="btn btn-primary">
     Reset
   </button>
 </div>
+
+<app-counter-prefs />

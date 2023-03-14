@@ -4,7 +4,6 @@ import { CounterComponent } from './counter.component';
 import { StoreModule } from '@ngrx/store';
 import { featureName, reducers } from './state';
 import { CounterPrefsComponent } from './components/counter-prefs/counter-prefs.component';
-
 @NgModule({
   declarations: [CounterComponent, CounterPrefsComponent],
   imports: [
