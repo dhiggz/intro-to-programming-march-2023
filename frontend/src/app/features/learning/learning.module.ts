@@ -6,6 +6,11 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { NewComponent } from './components/new/new.component';
 import { ListComponent } from './components/list/list.component';
 import { OverviewComponent } from './components/overview/overview.component';
+import { StateComponent } from './state/state.component';
+import { featureName, reducers } from './state';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -39,10 +44,14 @@ const routes: Routes = [
     NewComponent,
     ListComponent,
     OverviewComponent,
+    StateComponent,
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    StoreModule.forFeature(featureName, reducers),
+    EffectsModule.forFeature(),
+    HttpClientModule,
   ],
 })
 export class LearningModule {}
