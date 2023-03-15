@@ -1,4 +1,5 @@
 import { createActionGroup, emptyProps, props } from '@ngrx/store';
+import { CounterState } from '../reducers/counter.reducer';
 import { ValidCountByValues } from '../../models';
 
 export const counterEvents = createActionGroup({
@@ -8,5 +9,19 @@ export const counterEvents = createActionGroup({
     'Decrement Button Clicked': emptyProps(),
     'Reset Button Clicked': emptyProps(),
     'Count By Set': props<{ by: ValidCountByValues }>(),
+  },
+});
+
+export const counterCommands = createActionGroup({
+  source: 'Counter Commands',
+  events: {
+    'Load Counter State': emptyProps(),
+  },
+});
+
+export const counterDocuments = createActionGroup({
+  source: 'Counter Documents',
+  events: {
+    'Counter State': props<{ payload: CounterState }>(),
   },
 });
