@@ -18,6 +18,13 @@ const routes: Routes = [
     component: CounterComponent,
   },
   {
+    path: 'learning',
+    loadChildren: () =>
+      import('./features/learning/learning.module').then(
+        (m) => m.LearningModule,
+      ),
+  },
+  {
     path: '**',
     redirectTo: 'dashboard',
   },
