@@ -14,6 +14,7 @@ export class CounterPrefsComponent {
 
   constructor(private readonly store: Store) {}
   setCountBy(by: ValidCountByValues) {
+    // this MEANS the user did this.
     this.store.dispatch(counterEvents.countBySet({ by }));
   }
 }

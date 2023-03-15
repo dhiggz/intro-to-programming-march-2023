@@ -1,0 +1,46 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "id": "3emjsNj2NPSnmroi8Pmy0",
+      "type": "text",
+      "x": 519,
+      "y": 160,
+      "width": 859,
+      "height": 475,
+      "angle": 0,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "roundness": null,
+      "seed": 150871031,
+      "version": 816,
+      "versionNonce": 671643641,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1678896803963,
+      "link": null,
+      "locked": false,
+      "text": "\"Object-Relational Impedence Mismatch\"\n\n- NHibernate - .Net (port Hibernate Java)\n    - Ayende Rahein - \"JFHCI\"\n\n- \"Make the right thing the easiest thing to do - make the wrong things harder to do\"\n- \"Pushing the users into the 'pit of success'\"\n\n\n- \"Microservices\"\n    - DO NOT SHARE DATABASES (*)\n    - Entity Framework assumes your application will have it's own database.\n    - It will create it for you, create migrations, etc. \n    - Does this mean you CAN'T use it on an existing database that you don't own?\n        - You can. But it won't be easy. \n        - Jeff says: \"Probably not even worth trying\"\n    - IF you are using \"shared databases\" (consider stopping?)\n        - Probably don't use EF, use Dapper\n            - https://github.com/DapperLib/Dapper",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 468,
+      "containerId": null,
+      "originalText": "\"Object-Relational Impedence Mismatch\"\n\n- NHibernate - .Net (port Hibernate Java)\n    - Ayende Rahein - \"JFHCI\"\n\n- \"Make the right thing the easiest thing to do - make the wrong things harder to do\"\n- \"Pushing the users into the 'pit of success'\"\n\n\n- \"Microservices\"\n    - DO NOT SHARE DATABASES (*)\n    - Entity Framework assumes your application will have it's own database.\n    - It will create it for you, create migrations, etc. \n    - Does this mean you CAN'T use it on an existing database that you don't own?\n        - You can. But it won't be easy. \n        - Jeff says: \"Probably not even worth trying\"\n    - IF you are using \"shared databases\" (consider stopping?)\n        - Probably don't use EF, use Dapper\n            - https://github.com/DapperLib/Dapper"
+    }
+  ],
+  "appState": {
+    "gridSize": null,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}
