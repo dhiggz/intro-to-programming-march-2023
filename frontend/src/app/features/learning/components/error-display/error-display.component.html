@@ -1,0 +1,8 @@
+<div
+  class="alert alert-danger"
+  *ngIf="hasError$ | async">
+   
+  <h2>There was an Error</h2>
+   
+  <p>{{ errorMessage$ | async }}</p>
+</div>

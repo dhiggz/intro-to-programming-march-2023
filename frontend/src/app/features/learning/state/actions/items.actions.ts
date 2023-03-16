@@ -1,7 +1,15 @@
 // Events
 
 import { createActionGroup, emptyProps, props } from '@ngrx/store';
+import { ItemEntityRequestModel } from '../../models/items.models';
 import { ItemEntity } from '../reducers/items.reducer';
+
+export const itemsEvents = createActionGroup({
+  source: '[Learning] Events',
+  events: {
+    'Item Creation Requested': props<{ payload: ItemEntityRequestModel }>(),
+  },
+});
 
 // Commands
 export const itemsCommands = createActionGroup({
@@ -17,5 +25,6 @@ export const itemsDocuments = createActionGroup({
   source: '[Learning] Items Documents',
   events: {
     items: props<{ payload: ItemEntity[] }>(),
+    item: props<{ payload: ItemEntity }>(),
   },
 });
