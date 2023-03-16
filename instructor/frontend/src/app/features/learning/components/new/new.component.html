@@ -7,6 +7,13 @@
       type="text"
       class="form-control"
       formControlName="name" />
+
+    <div
+      class="alert alert-danger"
+      *ngIf="name.invalid && (name.touched || name.dirty)">
+      <p *ngIf="name.hasError('required')">This is Required</p>
+      <p *ngIf="name.hasError('maxlength')">This is too long!</p>
+    </div>
   </div>
   <div class="form-group">
     <label for="description">Description of Learning Resource</label>
