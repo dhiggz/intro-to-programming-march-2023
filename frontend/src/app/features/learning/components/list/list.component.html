@@ -1,1 +1,14 @@
-<p>list works!</p>
+<ul
+  class="list-unstyled"
+  *ngIf="items$ | async as items">
+  <li
+    class="card"
+    *ngFor="let item of items">
+    <div class="card-header">{{ item.name }}</div>
+    <div class="card-body">
+      <p>{{ item.name }}</p>
+      <p>{{ item.description }}</p>
+      <p>{{ item.link }}</p>
+    </div>
+  </li>
+</ul>

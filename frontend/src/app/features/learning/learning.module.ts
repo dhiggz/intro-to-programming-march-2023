@@ -3,14 +3,15 @@ import { CommonModule } from '@angular/common';
 import { LearningComponent } from './learning.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { NewComponent } from './components/new/new.component';
 import { ListComponent } from './components/list/list.component';
 import { OverviewComponent } from './components/overview/overview.component';
-import { StateComponent } from './state/state.component';
-import { featureName, reducers } from './state';
+import { NewComponent } from './components/new/new.component';
 import { StoreModule } from '@ngrx/store';
+import { featureName, reducers } from './state';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
+import { ItemsEffects } from './state/effects/items.effects';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -41,17 +42,17 @@ const routes: Routes = [
   declarations: [
     LearningComponent,
     NavigationComponent,
-    NewComponent,
     ListComponent,
     OverviewComponent,
-    StateComponent,
+    NewComponent,
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     StoreModule.forFeature(featureName, reducers),
-    EffectsModule.forFeature(),
+    EffectsModule.forFeature([ItemsEffects]),
     HttpClientModule,
+    ReactiveFormsModule,
   ],
 })
 export class LearningModule {}

@@ -6,7 +6,6 @@ import { featureName, reducers } from './state';
 import { CounterPrefsComponent } from './components/counter-prefs/counter-prefs.component';
 import { EffectsModule } from '@ngrx/effects';
 import { CounterEffects } from './state/effects/counter.effects';
-
 @NgModule({
   declarations: [
     CounterComponent,

@@ -19,7 +19,7 @@ const initialState: CounterState = {
 // given the current state, you have to return a NEW state (you cannot modify the current state)
 export const reducer = createReducer(
   initialState,
-  on(counterDocuments.counterState, (_,a) => a.payload),
+  on(counterDocuments.counterState, (_, a) => a.payload),
   on(counterEvents.incrementButtonClicked, (currentState: CounterState) => ({
     ...currentState,
     current: currentState.current + currentState.by,

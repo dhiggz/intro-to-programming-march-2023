@@ -1,1 +1,30 @@
-<p>new works!</p>
+<form
+  [formGroup]="form"
+  (ngSubmit)="addIt()">
+  <div class="form-group">
+    <label for="name">Name of Learning Resource</label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="name" />
+  </div>
+  <div class="form-group">
+    <label for="description">Description of Learning Resource</label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="description" />
+  </div>
+  <div class="form-group">
+    <label for="link">Link for Learning Resource</label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="link" />
+  </div>
+  <button
+    type="submit"
+    class="btn btn-success">
+    Add This Resource
+  </button>
+</form>
