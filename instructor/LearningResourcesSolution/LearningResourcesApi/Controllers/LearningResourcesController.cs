@@ -17,6 +17,7 @@ public class LearningResourcesController : ControllerBase
     public async Task<ActionResult<LearningResourceSummaryItem>> AddResources(
         [FromBody] LearningResourcesCreateRequest request)
     {
+        //Thread.Sleep(3000); // 
         // Validate it.. If it doesn't meet the invariants, return a 400.
         if(!ModelState.IsValid)
         {
@@ -45,13 +46,14 @@ public class LearningResourcesController : ControllerBase
 
 
     [HttpGet("/learning-resources")]
-    public async Task<ActionResult<LearningResourcesResponse>> GetLearningResources()
+    public async Task<ActionResult<LearningResourcesResponse>> GetLearningResources(CancellationToken token)
     {
+        // await Task.Delay(3000, token);
         var data = await _context.LearningResources
             .Where(item => item.WhenRemoved == null)
             .Select(item => new LearningResourceSummaryItem(
                 item.Id.ToString(), item.Name, item.Description, item.Link))
-            .ToListAsync();
+            .ToListAsync(token);
 
         var response = new LearningResourcesResponse(data);
         return Ok(response);

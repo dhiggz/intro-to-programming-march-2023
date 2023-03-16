@@ -20,6 +20,7 @@ export class ItemsEffects {
     return this.actions$.pipe(
       ofType(itemsEvents.itemCreationRequested),
       mergeMap(
+        // track all the pending requests, merge them together into this code when you get a response.
         (
           a, // this is usually good for "non safe" operations (methods other than GET)
         ) =>
@@ -30,26 +31,30 @@ export class ItemsEffects {
             )
             .pipe(
               map((response) => itemsDocuments.item({ payload: response })),
-              catchError(() =>
-                of(
+              catchError((resp) => {
+                return of(
                   errorsEvents.errorHappened({
                     message: 'Welp, that failed! Sorry',
+                    innerError: resp,
                   }),
-                ),
-              ),
+                );
+              }),
             ),
       ),
     );
   });
 
   loadItems$ = createEffect(() => {
+    // a1, .... a2,....... a3
     return this.actions$.pipe(
       ofType(itemsCommands.loadTheItems),
       switchMap(() =>
+        // does not track requests - the last request is the one that will be handled.
+        // not only doesn't track the earlier requests, it "cancels" then.
         // usually good for GET requests
         this.client
           .get<{ data: ItemEntity[] }>(
-            'http://localhost:1340/learning-resources',
+            'http://localhost:1340/learning-resources', // > 16.667ms
           )
           .pipe(
             map((response) => response.data),
