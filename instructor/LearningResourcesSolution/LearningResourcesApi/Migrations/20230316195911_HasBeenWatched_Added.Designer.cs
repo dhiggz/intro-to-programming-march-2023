@@ -4,6 +4,7 @@ using LearningResourcesApi.Adapters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LearningResourcesApi.Migrations
 {
     [DbContext(typeof(LearningResourcesDataContext))]
-    partial class LearningResourcesDataContextModelSnapshot : ModelSnapshot
+    [Migration("20230316195911_HasBeenWatched_Added")]
+    partial class HasBeenWatched_Added
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

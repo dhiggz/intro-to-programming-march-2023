@@ -10,4 +10,6 @@ public class LearningResourcesEntity
 
     public DateTime WhenCreated { get; set; }
     public DateTime? WhenRemoved { get; set; }
+
+    public bool HasBeenWatched { get; set; }
 }

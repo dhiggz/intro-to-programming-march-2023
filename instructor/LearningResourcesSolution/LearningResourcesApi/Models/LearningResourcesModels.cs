@@ -3,7 +3,7 @@
 namespace LearningResourcesApi.Models;
 
 public record LearningResourceSummaryItem(
-    string Id, string Name, string Description, string Link);
+    string Id, string Name, string Description, string Link, bool HasBeenWatched);
 
 
 public record LearningResourcesResponse(List<LearningResourceSummaryItem> Data);

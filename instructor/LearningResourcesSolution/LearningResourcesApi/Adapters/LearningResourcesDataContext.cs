@@ -10,4 +10,9 @@ public class LearningResourcesDataContext : DbContext
         
     }
     public DbSet<LearningResourcesEntity> LearningResources { get; set; }
+
+    public IQueryable<LearningResourcesEntity> GetActiveLearningResources()
+    {
+        return LearningResources.Where(item => item.WhenRemoved == null);
+    }
 }
