@@ -23,7 +23,6 @@ const selectFeature = createFeatureSelector<LearningState>(featureName);
 // 2. Selector Per Branch
 const selectItemsBranch = createSelector(selectFeature, (f) => f.items);
 const selectErrorsBranch = createSelector(selectFeature, (f) => f.errors);
-
 // 3. Helpers
 export const { selectAll: selectItemsEntitiesArray } =
   fromItems.adapter.getSelectors(selectItemsBranch);

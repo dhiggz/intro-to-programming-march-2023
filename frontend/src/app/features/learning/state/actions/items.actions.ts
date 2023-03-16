@@ -1,9 +1,8 @@
-// Events
-
 import { createActionGroup, emptyProps, props } from '@ngrx/store';
 import { ItemEntityRequestModel } from '../../models/items.models';
 import { ItemEntity } from '../reducers/items.reducer';
 
+// Events
 export const itemsEvents = createActionGroup({
   source: '[Learning] Events',
   events: {

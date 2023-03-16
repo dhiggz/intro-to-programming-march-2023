@@ -2,11 +2,12 @@
   [formGroup]="form"
   (ngSubmit)="addIt()">
   <div class="form-group">
-    <label for="name">Name of Learning Resource</label
-    ><input
+    <label for="name">Name of Learning Resource</label>
+    <input
       type="text"
       class="form-control"
-      formControlName="name" />    
+      formControlName="name" />
+
     <div
       class="alert alert-danger"
       *ngIf="name.invalid && (name.touched || name.dirty)">
@@ -15,15 +16,15 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="description">Description of Learning Resource</label
-    ><input
+    <label for="description">Description of Learning Resource</label>
+    <input
       type="text"
       class="form-control"
       formControlName="description" />
   </div>
   <div class="form-group">
-    <label for="link">Link for Learning Resource</label
-    ><input
+    <label for="link">Link for Learning Resource</label>
+    <input
       type="text"
       class="form-control"
       formControlName="link" />
@@ -31,6 +32,6 @@
   <button
     type="submit"
     class="btn btn-success">
-        Add This Resource
+    Add This Resource
   </button>
 </form>
