@@ -14,6 +14,7 @@ import { ItemsEffects } from './state/effects/items.effects';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ErrorDisplayComponent } from './components/error-display/error-display.component';
 import { ErrorsEffects } from './state/effects/errors.effects';
+import { TacosComponent } from './components/tacos/tacos.component';
 
 const routes: Routes = [
   {
@@ -48,6 +49,7 @@ const routes: Routes = [
     OverviewComponent,
     NewComponent,
     ErrorDisplayComponent,
+    TacosComponent,
   ],
   imports: [
     CommonModule,
